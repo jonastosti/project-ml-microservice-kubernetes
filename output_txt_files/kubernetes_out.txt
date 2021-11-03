@@ -1,1 +1,17 @@
-<paste log output from Kubernetes-mediated prediction, here>
+A0097118@NPRCURJBE04C55D MINGW64 ~/Desktop/Projeto-5/project-ml-microservice-kub                                           ernetes (master)
+$ ./make_prediction.sh
+Port: 8000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   260  100    48  100   212    615   2717 --:--:-- --:--:-- --:--:--  3333{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
+
+A0097118@NPRCURJBE04C55D MINGW64 ~/Desktop/Projeto-5/project-ml-microservice-kub                                           ernetes (master)
+$
+
+
+
