@@ -1,1 +1,37 @@
-<paste log output from Docker prediction, here>
+Successfully built 0c46d681d9df
+Successfully tagged udacity-project:latest
+REPOSITORY        TAG             IMAGE ID       CREATED                  SIZE
+udacity-project   latest          0c46d681d9df   Less than a second ago   1.33GB
+<none>            <none>          7cbddc87d8e5   10 minutes ago           1.33GB
+<none>            <none>          d226b4a4599c   14 minutes ago           1.33GB
+<none>            <none>          739e8244d546   22 minutes ago           1.33GB
+<none>            <none>          d6c45d06c5b5   38 minutes ago           1.33GB
+<none>            <none>          e3ebd37d36c9   53 minutes ago           999MB
+lambci/lambda     python3.8       094248252696   9 months ago             524MB
+lambci/lambda     nodejs12.x      22a4ada8399c   9 months ago             390MB
+lambci/lambda     nodejs10.x      db93be728e7b   9 months ago             385MB
+lambci/lambda     python3.7       22b4b6fd9260   9 months ago             946MB
+lambci/lambda     python3.6       177c85a10179   9 months ago             894MB
+lambci/lambda     python2.7       d96a01fe4c80   9 months ago             763MB
+lambci/lambda     nodejs8.10      5754fee26e6e   9 months ago             813MB
+python            3.7.3-stretch   34a518642c76   2 years ago              929MB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-520-173
+[2021-11-03 20:13:33,158] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2021-11-03 20:13:33,173] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2021-11-03 20:13:33,183] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2021-11-03 20:13:33,188] INFO in app: Prediction: 
+[20.35373177134412]
+172.17.0.1 - - [03/Nov/2021 20:13:33] "POST /predict HTTP/1.1" 200 -
