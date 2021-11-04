@@ -1,42 +1,48 @@
 [![CircleCI](https://circleci.com/gh/jonastosti/project-ml-microservice-kubernetes/tree/master.svg?style=svg)](https://circleci.com/gh/jonastosti/project-ml-microservice-kubernetes/tree/master)
+[![CircleCI](https://circleci.com/gh/jonastosti/project-ml-microservice-kubernetes/tree/master.svg?style=svg)](https://circleci.com/gh/jonastosti/project-ml-microservice-kubernetes/tree/master)
 
 ## Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+This project is part of the Cloud DevOps Engineer Nanodegree Program from Udacity. The main goal of this project was to create a docker container for a python app and deploy it using Kubernetes. In order to achieve that, the following steps were taken:
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+* Creation of a Make file to build and lint our app, as well as to lint a Docker Image;
 
-### Project Tasks
+* Creation of a Docker image for a Pyhton app;
+* Constructed a CI pipeline on Circle CI to build and lint our application;
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+**P.S:** The application code used in this project was provided by Udacity.
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
+## Running
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
+The application can be executed by invoking the following commands:
 
----
+```bash
+# Starts Minikube
+minikube start
 
-## Setup the Environment
+# Pulls the latest image and deploys it to Kubernetes
+./run_kubernetes.sh
 
-* Create a virtualenv and activate it
-* Run `make install` to install the necessary dependencies
+# Invokes the app
+./make_predictions.sh
+```
 
-### Running `app.py`
+## Files Description
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+**MakeFile**: Instructions to fetch the app's dependencies, as well as to lint the the Python code and the Dockerfile
 
-### Kubernetes Steps
+**Dockerfile:** Commands to assemble the docker image.
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+**app.py:** Application code.
+
+**make_prediction.sh:** File that invokes the application on port 8000 once it's running.
+
+**requirements.txt:** Python dependencies needed to run the app;
+
+**run_docker.sh:** Builds a DockerFile and run it locally.
+
+**run_kubernetes.sh:** Instructions to deploy the app container to Kubernetes.
+
+**upload_docker.sh**: Instructions to upload a docker image to the Docker Hub.
+
+**.circleci/config.yml:** Code used on the Circle CI Pipeline
